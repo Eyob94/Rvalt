@@ -10,6 +10,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Disable Windows Defender
+        run: |
+          Set-MpPreference -DisableRealtimeMonitoring $true
+        shell: powershell
       - uses: dtolnay/rust-toolchain@stable
       - name: Install OCIO via vcpkg
         run: |
