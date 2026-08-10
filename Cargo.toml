@@ -1,0 +1,44 @@
+[package]
+name = "rvalt"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+path = "src/bin/ocio.rs"
+name = "ocio"
+
+[dependencies]
+exr = { version = "1" }
+anyhow = "1"
+winit = { version = "0.30", features = ["android-native-activity"] }
+env_logger = "*"
+log = "0.4"
+wgpu = "29"
+pollster = "0.4"
+bytemuck = { version = "1.24", features = ["derive"] }
+egui = "0.35"
+egui-wgpu = "0.35"
+egui-winit = "0.35"
+half = { version = "2", features = ["bytemuck"] }
+ocio-rs = { git = "https://github.com/Eyob94/ocio-rs.git" }
+image = "0.24"
+crossbeam = "0.8.4"
+rfd = "0.17.2"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = [
+    "env-filter",
+    "fmt",
+    "json",
+] }
+rayon = "1.12.0"
+dotenv = "0.15.0"
+strum = "0.28.0"
+strum_macros = "0.28.0"
+serde = "1.0.229"
+serde_json = "1.0.151"
+dirs = "6.0.0"
+egui-phosphor = "0.13.0"
+parking_lot = "0.12.5"
+
+[build-dependencies]
+cc = "1"
